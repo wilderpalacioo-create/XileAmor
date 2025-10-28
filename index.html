@@ -12,6 +12,8 @@
       --accent:#ff4d6d;
       --accent-2:#ffb3c6;
       --bg:#0f1020;
+
+      
     }
     html,body{height:100%;background:linear-gradient(180deg,#0f1020 0%, #2b2b45 100%);font-family: 'Segoe UI', Roboto, Helvetica, Arial;}
     .card-glass{background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));backdrop-filter: blur(6px);box-shadow:0 8px 30px rgba(2,6,23,0.6);border-radius:16px;border:1px solid rgba(255,255,255,0.04)}
@@ -44,23 +46,62 @@
       .title{font-size:2.6rem}
       .gallery img{height:220px}
     }
+
+    .text-gradient{
+  background: linear-gradient(90deg, var(--accent), var(--accent-2), #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s infinite linear;
+}
+
+@keyframes shimmer{
+  0%{background-position:0% 50%;}
+  100%{background-position:100% 50%;}
+}
+
+.bounce{
+  animation: bounce 1.8s infinite;
+}
+.bounce.delay{animation-delay:.4s;}
+.bounce.delay2{animation-delay:.8s;}
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-8px);}
+}
+
+@keyframes pulse{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.1);}
+}
   </style>
 </head>
 <body>
   <div class="hearts" id="hearts"></div>
 
-  <header>
-    <div class="container">
-      <div class="title">Nuestra historia de amor</div>
-      <div class="subtitle">10 meses juntos — cada día más felices ✨</div>
+   <header>
+    <div class="container position-relative">
+      <div class="title text-gradient mb-1">
+        💞 Nuestra historia de amor 💞
+      </div>
+      <div class="subtitle">
+        Mi amor 10 meses juntos — Aunque me sacas rabia, cada día más enamorado de ti ✨
+      </div>
+
+      <!-- Decoración animada -->
+      <div class="mt-3 d-flex justify-content-center gap-3">
+        <img src="https://cdn-icons-png.flaticon.com/512/535/535285.png" width="40" class="bounce">
+        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" width="40" class="bounce delay">
+        <img src="https://cdn-icons-png.flaticon.com/512/2107/2107957.png" width="40" class="bounce delay2">
+      </div>
     </div>
   </header>
+
 
   <main class="container mb-5" style="position:relative;z-index:2">
     <div class="row g-4">
       <div class="col-lg-7">
         <div class="card-glass p-4">
-          <h5 class="mb-3" style="color:var(--accent);">Carta interactiva</h5>
+          <h5 class="mb-3" style="color:var(--accent);">Para mi amor ❤️</h5>
           <div class="letterbox" id="typedText"> </div>
 
           <div class="d-flex gap-2 mt-3">
@@ -71,14 +112,20 @@
 
           <hr class="my-3" style="border-color:rgba(255,255,255,0.06)">
 
-          <div class="small text-muted">Consejo: si la música no arranca sola, pulsa "Reproducir". Algunos navegadores bloquean reproducción automática.</div>
+          <div class="small text-muted"></div>
         </div>
 
         <div class="card-glass p-4 mt-4 surprise" id="surpriseArea">
           <div class="big-heart">💖</div>
           <div id="finalMsg" style="font-size:1.2rem;margin-top:8px;color:#fff;display:none">Te amo, mi vida 💖</div>
-          <button id="showLove" class="btn btn-pink btn-lg mt-3" style="background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;color:white;border-radius:10px">Dame la sorpresa</button>
+          <button id="showLove" class="btn btn-pink btn-lg mt-3" style="background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;color:white;border-radius:10px">Abre la sorpresa</button>
         </div>
+          <div class="text-center mt-4">
+    <img src="images/img7.jpg" 
+         alt="decoración amor" 
+         style="width:400px;animation:pulse 1.8s infinite;">
+    <h2 class="mt-5 text-light">Nuestro amor sigue creciendo... ❤️</h2>
+  </div>
       </div>
 
       <div class="col-lg-5">
@@ -100,7 +147,7 @@
             <li>Tu sonrisa que me alegra el día</li>
             <li>Las aventuras que compartimos</li>
             <li>Tu forma de cuidarme y escucharme</li>
-            <li>Esos pequeños gestos que sólo tú haces</li>
+            <li>Esos pequeños gestos que sólo tú haces(Antes no los entendia pero si que los veo)</li>
           </ul>
         </div>
       </div>
@@ -145,12 +192,12 @@
 
     // ---- typed text content ----
     const phrases = [
-      "Hace 10 meses que empezamos esta aventura juntos.",
-      "Desde el primer día supe que había algo especial entre nosotros.",
-      "Me encanta cómo me miras, cómo ríes, y la calma que me das cuando todo está caótico.",
+      "Hace 10 meses que empezamos esta aventura juntos, le agradezco a la vida por traerme una mujer como tu, te amo mi amor ❤️🙈 ojala dios nos bendiga y siga compartiendo muchos momentos a tu lado.",
+      "Desde el primer día supe que había algo especial entre nosotros (Por eso la mordida 😁).",
+      "Me encanta cómo me miras, cómo ríes, y la calma que me das, contigo me siento bien.",
       "Gracias por ser mi compañera de locuras, de paseos y de sueños.",
       "Cada momento contigo me hace querer ser mejor, y cada recuerdo me hace sonreír.",
-      "Wil: gracias por enseñarme que el amor también es amistad, confianza y muchas risas.",
+      "María: gracias por enseñarme que el amor también es amistad, confianza y muchas risas.",
       "Te amo más de lo que puedo decir en palabras. Gracias por estos 10 meses... y por todos los que vienen."
     ];
 
@@ -181,7 +228,7 @@
         typePhrase(phrases[index], ()=>{});
         index++;
       } else {
-        typePhrase("Y esto apenas comienza... 💫", ()=>{});
+        typePhrase("Y esto apenas comienza... 💫💍✈️🐶🏠👪", ()=>{});
       }
     }
 
@@ -221,8 +268,8 @@
       try{ new Audio('https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg').play(); }catch(e){}
       // show a more personal text after short delay
       setTimeout(()=>{
-        finalMsg.textContent = 'Te amo, mi vida 💖';
-      }, 700);
+        finalMsg.textContent = 'Quedas invitada a una pizza con cocacola todo includo, chupadita de encima ';
+      }, 1500);
     });
 
     function createBurst(){
@@ -250,3 +297,4 @@
   </script>
 </body>
 </html>
+
